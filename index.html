@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob: https://*.sndcdn.com https://*.soundcloud.com; media-src 'self' blob: https:; style-src 'self' 'unsafe-inline'; script-src 'self' https://w.soundcloud.com; frame-src https://w.soundcloud.com https://soundcloud.com; connect-src 'self' https://*.sndcdn.com https://*.soundcloud.com https://lrclib.net; font-src 'self' data:;">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AURA — SoundCloud</title>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="app" id="app">
+  <header class="titlebar">
+    <div class="brand" aria-label="AURA">
+      <span class="brand-mark"><span class="brand-orb"></span><span data-icon="cloud"></span></span>
+      <span class="brand-name">AURA</span>
+      <span class="brand-tag">SoundCloud</span>
+    </div>
+    <div class="titlebar-drag"></div>
+    <div class="win-controls">
+      <button class="win-btn" data-win="minimize" title="Свернуть" aria-label="Свернуть"><span data-icon="minimize"></span></button>
+      <button class="win-btn" data-win="maximize" title="Развернуть" aria-label="Развернуть"><span data-icon="maximize"></span></button>
+      <button class="win-btn win-close" data-win="close" title="Скрыть в трей" aria-label="Скрыть в трей"><span data-icon="x"></span></button>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div class="nav-btns">
+        <button class="nav-btn" id="backBtn" title="Назад" aria-label="Назад"><span data-icon="chevron-left"></span></button>
+        <button class="nav-btn" id="fwdBtn" title="Вперёд" aria-label="Вперёд"><span data-icon="chevron-right"></span></button>
+      </div>
+      <label class="search" id="searchWrap">
+        <span class="search-ic" data-icon="search"></span>
+        <input id="searchInput" type="search" placeholder="Треки, исполнители, плейлисты" autocomplete="off" spellcheck="false" aria-label="Поиск в SoundCloud">
+        <kbd>Ctrl K</kbd>
+      </label>
+      <div class="top-right" id="topRight"></div>
+    </div>
+    <div class="content" id="content" tabindex="-1"></div>
+  </main>
+
+  <footer class="player" id="player"></footer>
+</div>
+
+<aside class="rightbar" id="rightbar" aria-hidden="true"></aside>
+<div class="modal-root" id="modalRoot"></div>
+<div class="toasts" id="toasts"></div>
+
+<iframe id="sc" title="SoundCloud" allow="autoplay"
+  src="https://w.soundcloud.com/player/?url=&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"></iframe>
+
+<div id="boot">
+  <div class="boot-logo"><span class="boot-orb"></span><span data-icon="cloud"></span></div>
+  <div class="boot-name">AURA</div>
+  <div class="boot-line"><span></span></div>
+  <div class="boot-note">подключаемся к SoundCloud</div>
+</div>
+
+<script src="lib/sc-widget-api.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/util.js"></script>
+<script src="js/demo-data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/ui-views.js"></script>
+<script src="js/ui-player.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

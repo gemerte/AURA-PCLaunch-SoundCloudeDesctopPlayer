@@ -1,0 +1,52 @@
+{
+  "name": "aura-overlay-player",
+  "productName": "AURA",
+  "version": "1.0.0",
+  "description": "AURA — десктоп-плеер SoundCloud с плавающим мини-плеером и синхронизированным текстом",
+  "main": "main.js",
+  "author": "AURA",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "start:win": "node_modules\\electron\\dist\\electron.exe .",
+    "dist": "electron-builder",
+    "build:win": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^45.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.aura.soundcloud",
+    "productName": "AURA",
+    "copyright": "Copyright © 2026 AURA",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!dist/**",
+      "!tools/**",
+      "!**/*.log",
+      "!**/.git/**"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "assets/icon-256.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "AURA"
+    }
+  }
+}

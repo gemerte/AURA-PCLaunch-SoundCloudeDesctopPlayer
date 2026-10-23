@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob: https://*.sndcdn.com https://*.soundcloud.com; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self' data:;">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AURA мини-плеер</title>
+<link rel="stylesheet" href="css/overlay.css">
+</head>
+<body>
+<div class="ov" id="ov">
+  <div class="glow" aria-hidden="true"></div>
+
+  <header class="bar" id="bar">
+    <div class="art">
+      <img id="art" src="assets/icon-256.png" alt="">
+      <span class="eq" id="eq"><i></i><i></i><i></i><i></i></span>
+    </div>
+
+    <div class="meta">
+      <div class="kicker"><span class="dot"></span><span id="kicker">AURA</span></div>
+      <div class="title" id="title">Ничего не играет</div>
+      <div class="artist" id="artist">Откройте AURA и включите трек</div>
+    </div>
+
+    <div class="ctrl">
+      <button class="ib" data-act="prev" title="Предыдущий" aria-label="Предыдущий"><span data-icon="prev"></span></button>
+      <button class="pb" id="play" data-act="toggle" title="Играть" aria-label="Играть"><span data-icon="play"></span></button>
+      <button class="ib" data-act="next" title="Следующий" aria-label="Следующий"><span data-icon="next"></span></button>
+      <button class="ib ga" data-act="open" title="Открыть AURA" aria-label="Открыть AURA"><span data-icon="external"></span></button>
+    </div>
+
+    <div class="line"><div class="fill" id="fill"></div></div>
+  </header>
+
+  <section class="panel" id="panel" aria-hidden="true">
+    <div class="p-head">
+      <div class="tabs">
+        <button class="tab on" data-tab="lyrics">Текст</button>
+        <button class="tab" data-tab="queue">Очередь</button>
+      </div>
+      <div class="p-actions">
+        <button class="ib" id="like" data-act="like" title="В лайки"><span data-icon="heart"></span></button>
+        <button class="ib" id="mute" data-act="mute" title="Звук"><span data-icon="volume"></span></button>
+        <button class="ib" id="pin" data-act="pin" title="Закрепить раскрытым"><span data-icon="pin"></span></button>
+        <button class="ib" data-act="hide" title="Скрыть мини-плеер"><span data-icon="x"></span></button>
+      </div>
+    </div>
+
+    <div class="p-body" id="pbody"></div>
+
+    <div class="p-foot">
+      <span id="time">0:00 / 0:00</span>
+      <span class="spacer"></span>
+      <span class="hint" id="hint">наведите — раскрыть</span>
+      <button class="ib" data-act="open" title="Открыть AURA"><span data-icon="external"></span></button>
+    </div>
+  </section>
+</div>
+
+<script src="js/icons.js"></script>
+<script src="js/util.js"></script>
+<script src="js/overlay.js"></script>
+</body>
+</html>
